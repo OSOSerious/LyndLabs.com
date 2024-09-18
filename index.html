@@ -40,6 +40,7 @@
             --light-gray: #f9f9f9;
             --medium-gray: #555;
             --lighter-gray: #aaa;
+            --highlight: #D2C0A4;
         }
 
         /* Header */
@@ -155,46 +156,58 @@
             object-fit: cover;
         }
 
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background: var(--white);
+        /* Sections */
+        section {
+            padding: 80px 0;
             text-align: center;
         }
 
-        .about h2 {
+        section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--dark-blue);
         }
 
-        .about p {
+        section p {
             font-size: 1.1rem;
             max-width: 800px;
             margin: 0 auto;
             color: var(--medium-gray);
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 0;
+        /* Services, Features, Use Cases, etc. */
+        .services, .features, .use-cases, .pitch-deck, .risk-analysis, .technology-innovation, .marketing-strategy, .growth-cycles, .operational-flow, .key-partnerships, .sustainability-initiatives, .business-model, .product-offering, .community-engagement {
             background: var(--light-gray);
             text-align: center;
         }
 
-        .services h2 {
-            font-size: 2.5rem;
+        .services h2, .features h2, .use-cases h2, .pitch-deck h2, .risk-analysis h2, .technology-innovation h2, .marketing-strategy h2, .growth-cycles h2, .operational-flow h2, .key-partnerships h2, .sustainability-initiatives h2, .business-model h2, .product-offering h2, .community-engagement h2 {
             margin-bottom: 40px;
-            color: var(--dark-blue);
         }
 
-        .services-grid {
+        .services-grid, .features-grid, .pitch-grid, .strategy-grid, .cycles, .flow, .initiatives-grid, .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .service-item {
+        /* Specific Grid Configurations */
+        .services-grid, .features-grid, .pitch-grid, .strategy-grid, .innovation-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .cycles {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Items */
+        .service-item, .feature-item, .pitch-item, .strategy-box, .cycle, .step, .initiative-box, .category, .risk-box, .tech-box {
             background: var(--white);
             padding: 30px;
             border-radius: 10px;
@@ -202,111 +215,57 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
+        .service-item:hover, .feature-item:hover, .pitch-item:hover, .strategy-box:hover, .cycle:hover, .step:hover, .initiative-box:hover, .category:hover, .risk-box:hover, .tech-box:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 12px rgba(0,0,0,0.2);
         }
 
-        .service-item h3 {
+        .service-item h3, .feature-item h3, .pitch-item h3, .strategy-box h2, .cycle h2, .initiative-box h2, .category h3, .risk-box h2, .tech-box h2 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--dark-blue);
         }
 
-        .service-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            text-align: center;
-            background: var(--tan);
-        }
-
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--dark-blue);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-        }
-
-        .feature-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-blue);
-        }
-
-        .feature-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Use Cases Section */
-        .use-cases {
-            padding: 80px 0;
-            background: var(--white);
+        .cycle {
+            background: var(--dark-blue);
+            color: var(--white);
+            width: 18%;
             text-align: center;
         }
 
-        .use-cases h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--dark-blue);
-        }
-
-        .use-cases-content {
-            max-width: 1000px;
-            margin: auto;
-            text-align: left;
-        }
-
-        .use-case {
-            margin-bottom: 30px;
-        }
-
-        .use-case h3 {
-            font-size: 1.8rem;
-            color: var(--dark-blue);
+        .cycle h2 {
+            color: var(--highlight);
             margin-bottom: 10px;
         }
 
-        .use-case p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 80px 0;
-            background: var(--light-gray);
+        .flow .step {
+            width: 20%;
             text-align: center;
         }
 
-        .testimonials h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+        .step-icon {
+            background-color: var(--tan);
             color: var(--dark-blue);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            color: var(--highlight);
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-gray);
         }
 
         .testimonial-slider {
@@ -337,54 +296,10 @@
             color: var(--dark-blue);
         }
 
-        /* Pitch Deck Section */
-        .pitch-deck {
-            padding: 80px 0;
-            text-align: center;
-            background: var(--tan);
-        }
-
-        .pitch-deck h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--dark-blue);
-        }
-
-        .pitch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .pitch-item {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pitch-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-        }
-
-        .pitch-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-blue);
-        }
-
-        .pitch-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
         /* CTA Section */
         .cta {
             background: var(--dark-blue);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
         }
 
@@ -465,7 +380,26 @@
             color: var(--lighter-gray);
         }
 
+        /* Additional Sections Styles */
+        .strategy-section, .use-case, .solution, .risk-box, .tech-section, .innovation-item, .strategy-box, .cycle, .step, .initiative-box, .category, .tech-box, .feature-item, .pitch-item, .service-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .cycles {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cycle {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav ul {
                 flex-direction: column;
@@ -480,8 +414,12 @@
                 font-size: 2.5rem;
             }
 
-            .services-grid, .features-grid, .pitch-grid {
+            .services-grid, .features-grid, .pitch-grid, .strategy-grid, .innovation-grid, .grid {
                 grid-template-columns: 1fr;
+            }
+
+            .cycles {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .testimonial-slider {
@@ -494,16 +432,9 @@
                 margin: 0 auto 20px;
             }
 
-            .use-cases-content {
-                text-align: center;
-            }
-
-            .use-case {
-                text-align: center;
-            }
-
-            .use-case p {
-                text-align: center;
+            .flow .step, .cycle {
+                width: 100%;
+                margin-bottom: 20px;
             }
 
             .footer-content {
@@ -525,6 +456,16 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#risk-analysis">Risk Analysis</a></li>
+                    <li><a href="#technology-innovation">Technology</a></li>
+                    <li><a href="#marketing-strategy">Marketing</a></li>
+                    <li><a href="#growth-cycles">Growth</a></li>
+                    <li><a href="#operational-flow">Operations</a></li>
+                    <li><a href="#key-partnerships">Partnerships</a></li>
+                    <li><a href="#sustainability-initiatives">Sustainability</a></li>
+                    <li><a href="#business-model">Business Model</a></li>
+                    <li><a href="#product-offering">Products</a></li>
+                    <li><a href="#community-engagement">Community</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#pitch-deck">Why Us</a></li>
                     <li><a href="#cta" class="btn">Get Started</a></li>
@@ -627,6 +568,530 @@
                     <h3>Optimized Leasing Processes</h3>
                     <p>Smart algorithms analyze market trends to suggest optimal rental pricing and manage lease renewals. Our system streamlines tenant onboarding by automating background checks, credit analysis, and document signing, ensuring a smooth and compliant leasing process.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Analysis and Mitigation Section -->
+    <section class="risk-analysis" id="risk-analysis">
+        <div class="container">
+            <h2>Risk Analysis and Mitigation</h2>
+            <div class="risk-grid">
+                <div class="risk-box">
+                    <h3>Supply Chain Disruptions</h3>
+                    <p><strong>Risk:</strong> Delays or shortages in product availability</p>
+                    <div class="mitigation">
+                        <h4>Mitigation Strategy:</h4>
+                        <ul>
+                            <li>Diversified supplier base across multiple regions</li>
+                            <li>Strategic inventory buffers for essential items</li>
+                            <li>Predictive analytics for demand forecasting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="risk-box">
+                    <h3>Market Competition</h3>
+                    <p><strong>Risk:</strong> Entry of new competitors or expansion of existing ones</p>
+                    <div class="mitigation">
+                        <h4>Mitigation Strategy:</h4>
+                        <ul>
+                            <li>Continuous innovation in product offerings and technology</li>
+                            <li>Strong focus on customer loyalty and retention programs</li>
+                            <li>Strategic partnerships for exclusive product lines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="risk-box">
+                    <h3>Technological Failures</h3>
+                    <p><strong>Risk:</strong> Platform downtime or data breaches</p>
+                    <div class="mitigation">
+                        <h4>Mitigation Strategy:</h4>
+                        <ul>
+                            <li>Robust IT infrastructure with redundancy</li>
+                            <li>Regular security audits and penetration testing</li>
+                            <li>Comprehensive disaster recovery plan</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="risk-box">
+                    <h3>Regulatory Changes</h3>
+                    <p><strong>Risk:</strong> New laws affecting e-commerce or data privacy</p>
+                    <div class="mitigation">
+                        <h4>Mitigation Strategy:</h4>
+                        <ul>
+                            <li>Dedicated legal team monitoring regulatory landscape</li>
+                            <li>Proactive compliance measures</li>
+                            <li>Engagement with industry associations for advocacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="conclusion">
+                <h3>Our Approach to Risk Management</h3>
+                <p>At LyndLabs, we believe in proactive risk management. Our team regularly conducts comprehensive risk assessments, allowing us to stay ahead of potential challenges. This forward-thinking approach, combined with our agile business model, enables us to adapt quickly to changing market conditions and maintain our competitive edge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology and Innovation Section -->
+    <section class="technology-innovation" id="technology-innovation">
+        <div class="container">
+            <h2>Technology and Innovation</h2>
+            <div class="tech-section">
+                <h3>Core Platform Features</h3>
+                <ul>
+                    <li>AI-driven inventory management and predictive ordering</li>
+                    <li>Personalized product recommendations engine</li>
+                    <li>Seamless integration with property management systems</li>
+                    <li>Real-time delivery tracking and updates</li>
+                    <li>Secure payment processing and data encryption</li>
+                </ul>
+            </div>
+
+            <div class="tech-section">
+                <h3>Innovative Solutions</h3>
+                <div class="innovation-grid">
+                    <div class="innovation-item">
+                        <h4>Smart Reordering</h4>
+                        <p>Automated reordering based on usage patterns and preferences</p>
+                    </div>
+                    <div class="innovation-item">
+                        <h4>Virtual Apartment Planner</h4>
+                        <p>AI tool to suggest essential items based on apartment layout</p>
+                    </div>
+                    <div class="innovation-item">
+                        <h4>Eco-Impact Dashboard</h4>
+                        <p>Visualize environmental savings from sustainable product choices</p>
+                    </div>
+                    <div class="innovation-item">
+                        <h4>Community Bulk Orders</h4>
+                        <p>Coordinate bulk purchases among apartment residents for discounts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <h3>Future Development Roadmap</h3>
+                <ul>
+                    <li>Integration with smart home devices for automated inventory tracking</li>
+                    <li>Augmented reality (AR) for product visualization in living spaces</li>
+                    <li>Blockchain-based supply chain transparency for product sourcing</li>
+                    <li>Machine learning for optimizing delivery routes and reducing carbon footprint</li>
+                </ul>
+            </div>
+
+            <div class="tech-section">
+                <h3>Technology Partners and Integrations</h3>
+                <ul>
+                    <li>Cloud infrastructure providers for scalable and secure operations</li>
+                    <li>AI and machine learning platforms for advanced data analytics</li>
+                    <li>IoT device manufacturers for smart home integrations</li>
+                    <li>Sustainable packaging technology companies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Strategy Section -->
+    <section class="marketing-strategy" id="marketing-strategy">
+        <div class="container">
+            <h2>Marketing Strategy</h2>
+            <div class="strategy-grid">
+                <div class="strategy-box">
+                    <h3>Launch Phase</h3>
+                    <ul>
+                        <li>Targeted digital marketing campaigns</li>
+                        <li>Influencer partnerships in key urban areas</li>
+                        <li>Social media contests and giveaways</li>
+                        <li>PR outreach to lifestyle and tech publications</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Growth Phase</h3>
+                    <ul>
+                        <li>Expansion of referral programs</li>
+                        <li>Partnerships with property management companies</li>
+                        <li>Content marketing focusing on urban living tips</li>
+                        <li>Retargeting campaigns for site visitors</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Retention Strategies</h3>
+                    <ul>
+                        <li>Personalized email marketing campaigns</li>
+                        <li>Loyalty program with tiered benefits</li>
+                        <li>Regular product recommendations based on AI insights</li>
+                        <li>Customer feedback loops for continuous improvement</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Brand Building</h3>
+                    <ul>
+                        <li>Sponsorship of urban community events</li>
+                        <li>Sustainability initiatives and partnerships</li>
+                        <li>User-generated content campaigns</li>
+                        <li>Thought leadership in urban living solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="channels">
+                <h3>Key Marketing Channels</h3>
+                <ul>
+                    <li>Social Media: Instagram, Facebook, TikTok</li>
+                    <li>Search Engine Marketing (SEM) and Search Engine Optimization (SEO)</li>
+                    <li>Email Marketing</li>
+                    <li>Content Marketing (Blog, YouTube)</li>
+                    <li>Affiliate Marketing with lifestyle bloggers and urban living experts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Cycles Section -->
+    <section class="growth-cycles" id="growth-cycles">
+        <div class="container">
+            <h2>Scaling Up – Our Path to Success</h2>
+            <div class="cycles">
+                <div class="cycle">
+                    <h3>Cycle 1</h3>
+                    <p>Initial Launch</p>
+                    <p>1,000 units/month</p>
+                </div>
+                <div class="cycle">
+                    <h3>Cycle 2</h3>
+                    <p>Market Penetration</p>
+                    <p>10,000 units/month</p>
+                </div>
+                <div class="cycle">
+                    <h3>Cycle 3</h3>
+                    <p>Product Expansion</p>
+                    <p>50,000 units/month</p>
+                </div>
+                <div class="cycle">
+                    <h3>Cycle 4</h3>
+                    <p>Tech Enhancement</p>
+                    <p>100,000 units/month</p>
+                </div>
+                <div class="cycle">
+                    <h3>Cycle 5</h3>
+                    <p>National Expansion</p>
+                    <p>200,000 units/month</p>
+                </div>
+            </div>
+
+            <div class="projections">
+                <h3>Growth Projections</h3>
+                <ul>
+                    <li>Year 1: Focus on core product categories and initial marketing in 3 major cities</li>
+                    <li>Year 2: Expand to 10 additional urban areas and increase user base</li>
+                    <li>Year 3: Introduce new product categories like fitness and holistic products</li>
+                    <li>Year 4: Implement advanced AI and smart home integrations</li>
+                    <li>Year 5: Scale operations to multiple cities and regions nationwide</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Flow Section -->
+    <section class="operational-flow" id="operational-flow">
+        <div class="container">
+            <h2>From Order to Doorstep – A Seamless Process</h2>
+            <div class="flow">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <p>Customer Order</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <p>Order Processing</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <p>Drop Shipping</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <p>Delivery</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Automated inventory management ensures products are always in stock</li>
+                    <li>Real-time tracking allows customers to monitor their order status</li>
+                    <li>AI-driven order processing optimizes routing and fulfillment</li>
+                    <li>Integration with property management systems for seamless delivery coordination</li>
+                    <li>Dedicated customer support team to address any issues or inquiries</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Partnerships Section -->
+    <section class="key-partnerships" id="key-partnerships">
+        <div class="container">
+            <h2>Strategic Alliances for Enhanced Value</h2>
+            <div class="grid">
+                <div class="partner">
+                    <h3>Elevated Living</h3>
+                    <p><strong>Focus:</strong> Property integrations and tenant benefits</p>
+                    <ul>
+                        <li>Seamless integration with property management systems</li>
+                        <li>Exclusive resident discounts and rewards</li>
+                        <li>Co-branded marketing initiatives</li>
+                    </ul>
+                </div>
+                <div class="partner">
+                    <h3>Lynd Labs</h3>
+                    <p><strong>Focus:</strong> Technology and AI integration</p>
+                    <ul>
+                        <li>AI-powered personalized recommendations</li>
+                        <li>Predictive analytics for inventory management</li>
+                        <li>Smart home device integration</li>
+                    </ul>
+                </div>
+                <div class="partner">
+                    <h3>Drop Shipping Suppliers</h3>
+                    <p><strong>Focus:</strong> Product sourcing and fulfillment</p>
+                    <ul>
+                        <li>Wide range of high-quality essential products</li>
+                        <li>Efficient order processing and shipping</li>
+                        <li>Real-time inventory synchronization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <h3>Benefits of Partnerships</h3>
+                <ul style="display: inline-block; text-align: left;">
+                    <li>Access to a broader customer base</li>
+                    <li>Enhanced technology capabilities</li>
+                    <li>Improved supply chain efficiency</li>
+                    <li>Increased value proposition for residents</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability and Community Initiatives Section -->
+    <section class="sustainability-initiatives" id="sustainability-initiatives">
+        <div class="container">
+            <h2>Committed to a Greener and Connected Community</h2>
+            <div class="initiatives-grid">
+                <div class="initiative-box">
+                    <h3>Sustainability Initiatives</h3>
+                    <ul>
+                        <li>Eco-friendly packaging solutions</li>
+                        <li>Partnerships with sustainable suppliers</li>
+                        <li>Carbon-neutral delivery options</li>
+                        <li>Waste reduction program in warehouses</li>
+                    </ul>
+                </div>
+                <div class="initiative-box">
+                    <h3>Community Engagement</h3>
+                    <ul>
+                        <li>Urban gardening workshops</li>
+                        <li>Partnerships with local food banks</li>
+                        <li>Volunteer programs for employees</li>
+                        <li>Support for local artisans and businesses</li>
+                    </ul>
+                </div>
+                <div class="initiative-box">
+                    <h3>Education and Awareness</h3>
+                    <ul>
+                        <li>Sustainable living tips in product packaging</li>
+                        <li>Online resource center for eco-friendly practices</li>
+                        <li>Collaboration with environmental influencers</li>
+                        <li>Annual sustainability report publication</li>
+                    </ul>
+                </div>
+                <div class="initiative-box">
+                    <h3>Product Sustainability</h3>
+                    <ul>
+                        <li>Curated selection of eco-friendly products</li>
+                        <li>Refill and reuse program for certain items</li>
+                        <li>Biodegradable options in all major categories</li>
+                        <li>Transparency in product sourcing and manufacturing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="impact">
+                <h3>Measurable Impact</h3>
+                <ul>
+                    <li>30% reduction in packaging waste compared to traditional retail</li>
+                    <li>50,000 trees planted through our reforestation partnership</li>
+                    <li>100,000 lbs of food donated to local communities annually</li>
+                    <li>20% year-over-year increase in sales of eco-friendly products</li>
+                    <li>95% of our product range offers at least one sustainable option</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section class="business-model" id="business-model">
+        <div class="container">
+            <h2>Sustainable and Scalable Revenue Streams</h2>
+            <div class="grid">
+                <div class="section">
+                    <h3>Target Market</h3>
+                    <ul>
+                        <li>Urban apartment dwellers aged 25-45</li>
+                        <li>Professionals and young families seeking convenience</li>
+                        <li>Tech-savvy consumers comfortable with online shopping</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h3>Value Proposition</h3>
+                    <ul>
+                        <li>Convenience of home delivery for all essential items</li>
+                        <li>Integration with property reward systems</li>
+                        <li>Personalized product recommendations through AI</li>
+                        <li>Simplified restocking of household essentials</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section" style="margin-top: 20px;">
+                <h3>Revenue Streams</h3>
+                <ul>
+                    <li>Product sales with competitive margins</li>
+                    <li>Subscription services for regular deliveries</li>
+                    <li>Premium memberships offering exclusive benefits</li>
+                    <li>Partnerships with property management companies</li>
+                </ul>
+            </div>
+
+            <div class="section" style="margin-top: 20px;">
+                <h3>Key Partnerships</h3>
+                <ul>
+                    <li>Property management companies for integrated services</li>
+                    <li>Suppliers for quality products and efficient fulfillment</li>
+                    <li>Technology partners for AI and platform development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Offering Section -->
+    <section class="product-offering" id="product-offering">
+        <div class="container">
+            <h2>Comprehensive Range of Essential Living Products</h2>
+            <div class="grid">
+                <div class="category">
+                    <h3>Paper Products</h3>
+                    <ul>
+                        <li>Toilet paper</li>
+                        <li>Tissues</li>
+                        <li>Paper towels</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Cleaning Supplies</h3>
+                    <ul>
+                        <li>Multi-surface cleaners</li>
+                        <li>Disinfectants</li>
+                        <li>Cleaning tools</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Kitchen Essentials</h3>
+                    <ul>
+                        <li>Utensils</li>
+                        <li>Cookware</li>
+                        <li>Storage solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>New Categories</h3>
+            <div class="grid">
+                <div class="category">
+                    <h4>Fitness Essentials</h4>
+                    <ul>
+                        <li>Compact workout equipment</li>
+                        <li>Yoga mats</li>
+                        <li>Resistance bands</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>Holistic Lifestyle</h4>
+                    <ul>
+                        <li>Aromatherapy</li>
+                        <li>Wellness gadgets</li>
+                        <li>Meditation aids</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>Property-Branded Items</h4>
+                    <ul>
+                        <li>Branded storage solutions</li>
+                        <li>Custom decor</li>
+                        <li>Apartment utilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Engagement Section -->
+    <section class="community-engagement" id="community-engagement">
+        <div class="container">
+            <h2>Driving Awareness and Customer Acquisition</h2>
+            <div class="strategy-grid">
+                <div class="strategy-box">
+                    <h3>Launch Phase</h3>
+                    <ul>
+                        <li>Targeted digital marketing campaigns</li>
+                        <li>Influencer partnerships in key urban areas</li>
+                        <li>Social media contests and giveaways</li>
+                        <li>PR outreach to lifestyle and tech publications</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Growth Phase</h3>
+                    <ul>
+                        <li>Expansion of referral programs</li>
+                        <li>Partnerships with property management companies</li>
+                        <li>Content marketing focusing on urban living tips</li>
+                        <li>Retargeting campaigns for site visitors</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Retention Strategies</h3>
+                    <ul>
+                        <li>Personalized email marketing campaigns</li>
+                        <li>Loyalty program with tiered benefits</li>
+                        <li>Regular product recommendations based on AI insights</li>
+                        <li>Customer feedback loops for continuous improvement</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h3>Brand Building</h3>
+                    <ul>
+                        <li>Sponsorship of urban community events</li>
+                        <li>Sustainability initiatives and partnerships</li>
+                        <li>User-generated content campaigns</li>
+                        <li>Thought leadership in urban living solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="channels">
+                <h3>Key Marketing Channels</h3>
+                <ul>
+                    <li>Social Media: Instagram, Facebook, TikTok</li>
+                    <li>Search Engine Marketing (SEM) and Search Engine Optimization (SEO)</li>
+                    <li>Email Marketing</li>
+                    <li>Content Marketing (Blog, YouTube)</li>
+                    <li>Affiliate Marketing with lifestyle bloggers and urban living experts</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -741,8 +1206,7 @@
             });
         });
 
-        // Optional: Add slider functionality for testimonials
-        // Simple auto-scroll functionality
+        // Testimonials Slider Functionality
         const slider = document.querySelector('.testimonial-slider');
         let isDown = false;
         let startX;
@@ -770,7 +1234,8 @@
             slider.scrollLeft = scrollLeft - walk;
         });
 
-        // Auto-scroll testimonials
+        // Optional: Auto-scroll testimonials (commented out for user control)
+        /*
         let scrollAmount = 0;
         const scrollStep = 1;
         const scrollInterval = setInterval(() => {
@@ -781,6 +1246,7 @@
             slider.scrollLeft += scrollStep;
             scrollAmount += scrollStep;
         }, 20);
+        */
     </script>
 </body>
 </html>
